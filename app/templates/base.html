@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>ArenaShop</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h2>ArenaShop</h2>
+        <a href="#" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar_links">
+            <ul>
+                <li><a href="http://">Inicio</a></li>
+                <li><a href="http://">Cadastrar Produto</a></li>
+                <li><a href="http://">Sobre</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="footer_content">
+            &#169 ArenaShop
+            <h4>Equipando sua paixão pelo esporte com qualidade e desempenho em cada detalhe!</h4>
+        </div>
+    </footer>
+    <script src="{% static 'js/base.js' %}"></script>
+</body>
+</html>
