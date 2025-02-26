@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from Store.models import Products
+from Store.forms import ProductsForm
 
 class ProductListView(ListView):
     model = Products
@@ -13,3 +14,9 @@ class ProductListView(ListView):
         if search:
             product = product.filter(product__icontains=search)
         return product
+
+class ProductCreate(CreateView):
+    model = Products
+    form_class = ProductsForm
+    template_name = 'create_products.html'
+    success_url = '/list/'
