@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radley:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Parte do input: */
 .group {
 display: flex;
@@ -125,6 +119,7 @@ button {
   font-size: 1rem;
   font-weight: bold;
   border-radius: 4px;
+
 }
 .card button:hover {
   background-color: #7ca9dd;
@@ -132,9 +127,53 @@ button {
 }
 
 .card-grid{
-    margin: 50px 10px 25px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+  margin: 30px 10px 30px 10px;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  justify-content: center;
+  gap: 25px;
+}
+
+@media (max-width: 1252px) {
+  .card-grid{
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media (max-width: 941px) {
+  .card-grid{
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 718px) {
+  .card-grid{
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 476px) {
+  .card{
+    width: 150px;
+    height: 190px;
+  }
+
+  .card img {
+    height: 100px;
+
+  }
+  
+  .card h2{
+    font-size: 12px;
+  }
+  
+  .card p{
+    font-size: 8px;
+  }
+  
+  .card button {
+    width: 80%;
+    font-size: 0.7rem;
+  }
+
 }

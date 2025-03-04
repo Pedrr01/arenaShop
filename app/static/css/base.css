@@ -9,6 +9,18 @@
 	box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+footer{
+    margin-top: auto;
+    text-align: center;
+}
+
+
 .navbar{
     padding: 15px 0 15px 0;
     display: flex;
@@ -74,6 +86,7 @@ botão sanduicgh */
     border-radius: 10px;
 }
 
+
 @media (max-width: 600px){
     .navbar{
         flex-direction: column;
@@ -106,34 +119,4 @@ botão sanduicgh */
     }
 }
 
-main{
-    height: 80vh;
-}
 
-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100px;
-    border-top-color: rgb(234, 235,243);
-    border-top-style: solid;
-    border-top-width: 1px;
-}
-
-.footer_content {
-    display: flex;
-    flex-direction: column; 
-    gap: 5px;
-    align-items: center; 
-    cursor: default;
-    user-select: none;
-}
-
-h4{
-    font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}

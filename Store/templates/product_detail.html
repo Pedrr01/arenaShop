@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/product_detail.css' %}">
+<div class="card">
+    <img src="{{ product.photo.url }}" alt="{{ product.mark }} - {{ product.sport }}">
+    <div>
+      <h2>{{product.product}}</h2>
+      <p>Marca: {{product.mark}}</p>
+      <p>Preço: {{product.price}}</p>
+      <button>Saiba Mais</button>
+    </div>
+</div>
+{% endblock %}

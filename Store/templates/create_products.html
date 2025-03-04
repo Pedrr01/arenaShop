@@ -2,37 +2,11 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/create_products.css' %}"> 
-
-<form method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data"> 
     {% csrf_token %}
-    <div class="form-group">
-        {{ form.product }}
-        <small class="text-danger">{{ form.product.errors }}</small>
-    </div>
-    <div class="form-group">
-        {{ form.mark }}
-        <small class="text-danger">{{ form.mark.errors }}</small>
-    </div>
-    <div class="form-group">
-        {{ form.sport }}
-        <small class="text-danger">{{ form.sport.errors }}</small>
-    </div>
-    <div class="form-group">
-        {{ form.description }}
-        <small class="text-danger">{{ form.description.errors }}</small>
-    </div>
-    <div class="form-group">
-        {{ form.price }}
-        <small class="text-danger">{{ form.price.errors }}</small>
-    </div>
-    <div class="form-group">
-        {{ form.photo }}
-        <small class="text-danger">{{ form.photo.errors }}</small>
-    </div>
-    <div class="form-group">
-        {{ form.contact }}
-        <small class="text-danger">{{ form.contact.errors }}</small>
-    </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="Cadastrar" class="btn btn-primary">
 </form>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView,  DetailView
 from Store.models import Products
 from Store.forms import ProductsForm
 
@@ -20,3 +20,7 @@ class ProductCreate(CreateView):
     form_class = ProductsForm
     template_name = 'create_products.html'
     success_url = '/list/'
+
+class CarDetailView(DetailView):
+    model = Products
+    template_name = 'product_detail.html'
