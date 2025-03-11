@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radley:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radley:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 
 /* Parte do input: */
@@ -17,29 +18,30 @@ line-height: 28px;
 padding: 0 1rem;
 padding-left: 2.5rem;
 border: 2px solid transparent;
-border-radius: 8px;
+border-radius: 20px;
 outline: none;
-background-color: #f3f3f4;
+background-color: #DCDCDC;
 color: #0d0c22;
 transition: .3s ease;
 }
 
 .input::placeholder {
-color: #9e9ea7;
+color: #121212;
+font-size: 12px;
 }
 
 .input:focus, input:hover {
 outline: none;
-border-color: rgba(87, 134, 184, 0.4); 
+border-color: #fff; 
 background-color: #fff; 
-box-shadow: 0 0 0 4px rgba(87, 134, 184, 0.3); 
+box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4); 
 }
 
    
    .icon {
     position: absolute;
     left: 1rem;
-    fill: #9e9ea7;
+    fill: #121212;
     width: 1rem;
     height: 1rem;
    }
@@ -47,19 +49,21 @@ box-shadow: 0 0 0 4px rgba(87, 134, 184, 0.3);
 /* Parte do botão de pesquisa */
 
 button {
-    width: 70px;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 0;
-    background-color: #5786b8;
-    font-size: 12px;
-    color: white;
-   
-  }
-  
-  button:hover {
-    background-color: #7ca9dd;
-  }
+  width: 70px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 0;
+  background-color: #DCDCDC;
+  font-size: 12px;
+  color: #121212;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  user-select: none;
+}
+
+button:hover {
+  background-color: #727370;
+  color: #fff;  /* Mudando a cor do texto ao passar o mouse */
+}
   
 
 .research{
@@ -72,16 +76,20 @@ button {
 /* parte do card: */
 
 .card {
-  background-color: #fff;
+  background-color: #DCDCDC;
   width: 210px;
   height: 290px;
-  border-radius: 12px;
-  box-shadow: 4px 4px 12px #aaaa;
+  border-radius: 10px;
+  box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.2);
   user-select: none;
+  overflow: hidden; /* Garante que nada saia do card */
 }
+
 .card img {
-  width: 100%;
-  height: 160px;
+  width: 100%;            /* Faz a imagem ocupar toda a largura do card */
+  height: 160px;          /* Altura fixa, você pode ajustar conforme necessário */
+  object-fit: cover;      /* Faz a imagem cobrir a área do card sem distorção */
+  object-position: center;/* Garante que a parte central da imagem seja exibida */
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
@@ -92,15 +100,22 @@ button {
   align-items: center;
   gap: 4px;
   height: 40%;
-  font-family: "Montserrat", serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
 }
 
 .card h2{
-  font-weight: 800;
-  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:100;
+  color: #121212;
+  font-size: 25px;
+  
+ 
 }
 
 .card p{
@@ -110,21 +125,24 @@ button {
 
 .card button {
   margin-top: 4px;
-  background-color: #5786b8;
+  background-color: #434343;
   height: 30px;
   border: none;
   padding: 6px;
-  width: 80%;
+  width: 50%;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
 
-}
 .card button:hover {
-  background-color: #7ca9dd;
+  background-color: #fff;
   cursor: pointer;
+  color: #121212; 
 }
+
 
 .card-grid{
   margin: 30px 10px 30px 10px;
