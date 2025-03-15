@@ -8,23 +8,31 @@
             <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
             <input placeholder="Buscar produto" type="text" name='search' class="input">
         </div>
-        <button type="submit">Buscar</button>
+        <button type="submit" class="btn">Buscar</button>
     </form>
+
     <div class="card-grid">
         {% if product %}
             {% for product in product %}
             <div class="card">
-                <img src="{{ product.photo.url }}" alt="{{ product.mark }} - {{ product.sport }}">
+                {% if product.photo %}
+                    <img src="{{ product.photo.url }}" alt="{{ product.mark }} - {{ product.sport }}">
+                {% else %}
+                    <img src="{% static 'img/default_product.png' %}" alt="No image available">
+                {% endif %}
                 <div>
                   <h2>{{product.product}}</h2>
                   <p>Marca: {{product.mark}}</p>
                   <p>Preço: {{product.price}}</p>
-                  <button><a href="{% url 'detail_products' product.pk %}">Saiba Mais</a></button>
+                  <a class="saiba-mais" href="{% url 'detail_products' product.pk %}">
+                    <p class="saiba-mais">Saiba Mais</p>
+                  </a>
                 </div>
-              </div>
+            </div>
             {% endfor %}
         {% else %}
             <p class="no-results">Nenhum produto encontrado.</p>
         {% endif %}
     </div>
 {% endblock %}
+

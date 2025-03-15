@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
     <title>ArenaShop</title>
 </head>
 <body>
@@ -17,9 +18,17 @@
         </a>
         <div class="navbar_links">
             <ul>
-                <li><a href="{% url 'list_products' %}">Inicio</a></li>
-                <li><a href="{% url 'create_products' %}">Cadastrar Produto</a></li>
-                <li><a href="http://">Sobre</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'list_products' %}">Inicio</a></li>
+                    <li><a href="{% url 'create_products' %}">Cadastrar Produto</a></li>
+                    <li><a href="http://">Sobre</a></li>
+                    <li><a href="{% url 'logout' %}">Sair</a></li>
+                {% endif%}
+                {% if not user.is_authenticated %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Cadastrar-se</a></li>
+                    <li><a href="http://">Sobre</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>

@@ -17,7 +17,7 @@ class Products(models.Model):
     sport = models.ForeignKey(SportCategoryFK, on_delete=models.PROTECT, related_name="Product_Sport")
     description = models.TextField()  
     price = models.DecimalField(max_digits=10, decimal_places=2)  
-    photo = models.ImageField(upload_to="products/", blank=True, null=True, default='products_default.png')
+    photo = models.ImageField(upload_to="products/", blank=True, null=True, default='default_product.png')
     status = models.CharField(max_length=50, choices=[('indisponível', 'indisponível'), ('disponível', 'disponível')], default='disponível')  
     contact = models.CharField(max_length=255)  
     

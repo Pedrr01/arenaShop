@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do forms de criação: */
+.product-table {
+    width: 300px;
+    border-collapse: collapse;
+    margin: 60px auto 30px auto; 
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+    background-color: #DCDCDC;
+}
+
+.product-table th, .product-table td {
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.product-table th {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.product-table td input{
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.product-table td textarea {
+    border-radius: 20px;
+    padding: 8px;
+    width: 100%;
+    resize: none;
+}
+
+.product-table td select {
+    border-radius: 20px;
+    padding: 8px;
+    width: 100%;
+}
+
+/* Estilo do botão de cadastro: */
+.btn-cadastrar {
+    display: block;
+    margin: 0px auto;
+    background-color: #434343;
+    height: 30px;
+    border: none;
+    padding: 6px;
+    width: 10%;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn-cadastrar:hover{
+    background-color: #fff;
+    cursor: pointer;
+    color: #121212;
+}

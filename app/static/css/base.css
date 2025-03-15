@@ -1,25 +1,34 @@
-/* ---------------------- Importação das fontes ---------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-/* ---------------------- Estilos Globais ---------------------- */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ---------------------- Estilos do Body ---------------------- */
+/* Estilos do Body: */
 body{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #121212;  /* Cor de fundo escura */
+    background-color: #121212;  
 }
 
-/* ---------------------- Estilos da Navbar ---------------------- */
+/* Estilos da Navbar: */
+h2{
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    cursor: default;
+    user-select: none;
+    color: #E0E0E0;  
+}
+
 .navbar{
     padding: 15px 0 15px 0;
     display: flex;
@@ -31,20 +40,17 @@ body{
     border-bottom-width: 1px;
 }
 
-/* Estilo dos links na barra de navegação */
 .navbar_links ul{
     display: flex;
     gap: 20px;
 }
 
-/* Estilo dos itens de lista dentro da navbar */
 .navbar_links li{
     list-style: none;
     font-family: "Poppins", sans-serif;
     font-size: 19px;
 }
 
-/* Estilo dos links dentro da navbar */
 .navbar_links li a{
     display: block;
     text-decoration: none;
@@ -54,24 +60,12 @@ body{
     user-select: none;
 }
 
-/* Estilo para o efeito de hover nos links da navbar */
 .navbar_links li a:hover{
     color: #727370;
 }
 
-/* ---------------------- Estilos do Main (Conteúdo Principal) ---------------------- */
-h2{
-    font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 40px;
-    cursor: default;
-    user-select: none;
-    color: #E0E0E0;  /* Cor do título */
-}
 
-/* ---------------------- Estilos do Rodapé (Footer) ---------------------- */
+/* Estilos do Footer: */
 .footer{
     margin-top: auto;
     text-align: center;
@@ -80,16 +74,22 @@ h2{
     border-top-width: 1px;
     padding: 20px;
     color: #ccc;  
+    user-select: none;
 }
 
 .footer h4{
     margin-top: 10px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px; 
-    font-weight: 400; 
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
 }
 
-/* ---------------------- Estilos para o Menu Sandwich (dispositivos móveis) ---------------------- */
+/* Estilos para o Menu Sandwich */
 .toggle_button{
     position: absolute;
     top: 1.9rem;
@@ -101,7 +101,6 @@ h2{
     height: 21px;
 }
 
-/* Estilo das barras do botão de sanduíche */
 .toggle_button .bar{
     height: 3px;
     width: 100%;
@@ -109,42 +108,35 @@ h2{
     border-radius: 10px;
 }
 
-/* ---------------------- Estilos para telas pequenas (max-width: 600px) ---------------------- */
+/* Estilos para max-width: 600px: */
 @media (max-width: 600px){
-    /* Modificando a navbar para exibição em coluna */
     .navbar{
         flex-direction: column;
         align-items: center;
     }
 
-    /* Exibindo o botão de sanduíche em telas pequenas */
     .toggle_button{
         display: flex;
     }
 
-    /* Inicialmente, escondendo os links da navbar */
     .navbar_links{
         display: none;
         width: 100%;
     }
 
-    /* Organizando os links em uma coluna na navbar */
     .navbar_links ul{
         width: 100%;
         flex-direction: column;
     }
 
-    /* Alinhando os links ao centro na navbar */
     .navbar_links ul li{
         text-align: center;
     }
 
-    /* Estilo dos links da navbar */
     .navbar_links ul li a{
         padding: .5rem 1rem;
     }
 
-    /* Exibindo os links quando a classe 'active' for adicionada */
     .navbar_links.active{
         display: flex;
     }

@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/create_products.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/create_product.css' %}">
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table class="product-table">
         {{ form.as_table }}
     </table>
-    <input type="submit" value="Cadastrar" class="btn btn-primary">
+    <input type="submit" value="Cadastrar" class="btn-cadastrar">
 </form>
 {% endblock %}

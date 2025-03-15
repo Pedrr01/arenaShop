@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do título */
+h2 {
+    color: #DCDCDC;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo do forms de edição */
+.product-table {
+    width: 500px;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 10px auto;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+    background-color: #DCDCDC;
+}
+
+.product-table th, .product-table td {
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.product-table th {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.product-table td input {
+    border-radius: 20px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.product-table td input[type="file"] {
+    border: none; /* Borda removida do campo de foto */
+    padding: 7px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.product-table td textarea {
+    border-radius: 20px;
+    width: 100%;
+    padding: 8px;
+    resize: none;
+    height: 100px;
+    border: 1px solid #000;
+}
+
+.product-table td select {
+    border-radius: 20px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+/* Estilo para o botão limpar próximo ao checkbox (exemplo) */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o checkbox e o botão limpar */
+}
+
+.btn-limpar {
+    border: none;
+    height: 25px;
+    width: 70px;
+    background-color: #434343;
+    color: #fff;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn-limpar:hover {
+    background-color: #fff;
+    color: #121212;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+/* Estilo do botão salvar */
+.btn {
+    border: none;
+    height: 30px;
+    width: 90px;
+    background-color: #434343;
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #121212;
+}
+
+/* Estilo do botão cancelar */
+.btn-cancelar {
+    height: 30px;
+    width: 90px;
+    background-color: #434343;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 7px;
+    padding-left: 2px;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-cancelar:hover {
+    background-color: #fff;
+    color: #121212;
+}
+
+/* Media Queries para responsividade */
+@media screen and (max-width: 768px) {
+    .product-table {
+        width: 90%;
+    }
+    
+    .product-table th, .product-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .product-table th {
+        font-size: 15px;
+    }
+    
+    .btn, .btn-cancelar {
+        width: 80px;
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product-table {
+        width: 95%;
+    }
+    
+    .product-table th, .product-table td {
+        font-size: 13px;
+        padding: 8px;
+        display: block;
+        width: 100%;
+    }
+    
+    .product-table th {
+        font-size: 14px;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    
+    .btn, .btn-cancelar {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin: 15px 10px;
+    }
+}

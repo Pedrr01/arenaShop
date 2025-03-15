@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+        /* Centralizar o formulário */
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+        }
+
+        form {
+            background-color: #DCDCDC;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.2);
+            color: #121212;
+            width: 300px;
+        }
+
+        /* Estilizar os campos de entrada */
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+        }
+
+        input[type="submit"] {
+            border: none;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            border: 0;
+            background-color: #121212;
+            font-size: 12px;
+            color: #DCDCDC;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            user-select: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #727370;
+            color: #121212;
+        }
+
+        /* Estilizar mensagens de erro */
+        .errorlist {
+            color: red;
+            font-size: 14px;
+            list-style: none;
+            padding: 0;
+            margin-top: 5px;
+        }
+
+        .errorlist li {
+            display: none; /* Oculta por padrão */
+        }
+
+        /* Exibir erros apenas se existirem */
+        .errorlist:not(:empty) li {
+            display: block;
+        }
+    </style>
+
+    <div class="form-container">
+        <form method="post">
+            {% csrf_token %}
+            
+            {% for field in user_form %}
+                <div>
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <ul class="errorlist">
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+{% endblock %}

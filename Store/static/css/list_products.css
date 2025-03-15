@@ -1,202 +1,193 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radley:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radley:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-
-/* Parte do input: */
-.group {
-display: flex;
-line-height: 28px;
-align-items: center;
-position: relative;
-max-width: 300px;
-}
-
-.input {
-width: 100%;
-height: 40px;
-line-height: 28px;
-padding: 0 1rem;
-padding-left: 2.5rem;
-border: 2px solid transparent;
-border-radius: 20px;
-outline: none;
-background-color: #DCDCDC;
-color: #0d0c22;
-transition: .3s ease;
-}
-
-.input::placeholder {
-color: #121212;
-font-size: 12px;
-}
-
-.input:focus, input:hover {
-outline: none;
-border-color: #fff; 
-background-color: #fff; 
-box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4); 
-}
-
-   
-   .icon {
-    position: absolute;
-    left: 1rem;
-    fill: #121212;
-    width: 1rem;
-    height: 1rem;
-   }
-   
-/* Parte do botão de pesquisa */
-
-button {
-  width: 70px;
-  border-radius: 20px;
-  cursor: pointer;
-  border: 0;
-  background-color: #DCDCDC;
-  font-size: 12px;
-  color: #121212;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  user-select: none;
-}
-
-button:hover {
-  background-color: #727370;
-  color: #fff;  /* Mudando a cor do texto ao passar o mouse */
-}
-  
-
-.research{
+/* Estilos da barra de pesquisa: */
+.research {
     margin: 20px 0 10px 0;
     display: flex;
     justify-content: center;
     gap: 10px;
 }
-  
-/* parte do card: */
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 300px;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    outline: none;
+    background-color: #DCDCDC;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+
+.input::placeholder {
+    color: #121212;
+    font-size: 12px;
+}
+
+.input:focus, .input:hover {
+    outline: none;
+    border-color: #fff;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #121212;
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Estilos do botão de pesquisa: */
+button {
+    width: 70px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 0;
+    background-color: #DCDCDC;
+    font-size: 12px;
+    color: #121212;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    user-select: none;
+}
+
+button:hover {
+    background-color: #727370;
+    color: #fff;
+}
+
+/* Estilos dos cards: */
+.card-grid {
+    margin: 30px 10px 30px 10px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: center;
+    gap: 25px;
+}
 
 .card {
-  background-color: #DCDCDC;
-  width: 210px;
-  height: 290px;
-  border-radius: 10px;
-  box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.2);
-  user-select: none;
-  overflow: hidden; /* Garante que nada saia do card */
+    background-color: #DCDCDC;
+    width: 210px;
+    height: 290px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    overflow: hidden;
 }
 
 .card img {
-  width: 100%;            /* Faz a imagem ocupar toda a largura do card */
-  height: 160px;          /* Altura fixa, você pode ajustar conforme necessário */
-  object-fit: cover;      /* Faz a imagem cobrir a área do card sem distorção */
-  object-position: center;/* Garante que a parte central da imagem seja exibida */
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
+
 .card div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  height: 40%;
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 40%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
-.card h2{
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-variation-settings:100;
-  color: #121212;
-  font-size: 25px;
-  
- 
+.card h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: 100;
+    color: #121212;
+    font-size: 25px;
 }
 
-.card p{
-  font-size: 15px;
-  color: #000000;
+.card p {
+    font-size: 15px;
+    color: #000000;
 }
 
-.card button {
-  margin-top: 4px;
-  background-color: #434343;
-  height: 30px;
-  border: none;
-  padding: 6px;
-  width: 50%;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: bold;
-  border-radius: 15px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+.card .saiba-mais {
+    padding: 4px 7px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #DCDCDC;
+    background-color: #121212;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    user-select: none;
 }
 
-.card button:hover {
-  background-color: #fff;
-  cursor: pointer;
-  color: #121212; 
+.card .saiba-mais:hover {
+    background-color: #727370;
+    color: #121212;
 }
 
-
-.card-grid{
-  margin: 30px 10px 30px 10px;
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  justify-content: center;
-  gap: 25px;
+.no-results{
+    color: #DCDCDC;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding-top: 200px;
 }
 
-a{
-  text-decoration: none;
-  color: inherit;
-}
-
+/* Responsividade dos cards: */
 @media (max-width: 1252px) {
-  .card-grid{
-    grid-template-columns: repeat(4, auto);
-  }
+    .card-grid {
+        grid-template-columns: repeat(4, auto);
+    }
 }
 
 @media (max-width: 941px) {
-  .card-grid{
-    grid-template-columns: repeat(3, auto);
-  }
+    .card-grid {
+        grid-template-columns: repeat(3, auto);
+    }
 }
 
 @media (max-width: 718px) {
-  .card-grid{
-    grid-template-columns: repeat(2, auto);
-  }
+    .card-grid {
+        grid-template-columns: repeat(2, auto);
+    }
 }
 
 @media (max-width: 476px) {
-  .card{
-    width: 150px;
-    height: 190px;
-  }
+    .card {
+        width: 150px;
+        height: 190px;
+    }
+    .card img {
+        height: 100px;
+    }
+    .card h2 {
+        font-size: 12px;
+    }
+    .card p {
+        font-size: 8px;
+    }
+    .card button {
+        width: 80%;
+        font-size: 0.7rem;
+    }
+}
 
-  .card img {
-    height: 100px;
-
-  }
-  
-  .card h2{
-    font-size: 12px;
-  }
-  
-  .card p{
-    font-size: 8px;
-  }
-  
-  .card button {
-    width: 80%;
-    font-size: 0.7rem;
-  }
-
+/* Estilos dos links: */
+a {
+    text-decoration: none;
+    color: inherit;
 }

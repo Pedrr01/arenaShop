@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/detail_product.css' %}">
+<div class="container">
+  <div class="card">
+    <img src="{{ object.photo.url }}" alt="">
+    <div class="text">
+        <h2>{{products.product}}</h2>
+        <p>Marca: {{ products.mark }}</p>
+        <p>Sport: {{products.sport}} </p>
+        <p>Preço: {{products.price}} </p>
+        <p>Status: 
+          <span class="{% if products.status == 'disponível' %}disponível{% else %}indisponível{% endif %}">
+            {{ products.status }}
+          </span>
+        </p>
+        <p>{{products.description}}</p>
+        <p>Entre em contato: {{products.contact}}</p>
+        <div class="buttons">
+                <a class="detail-bnt" href="{% url 'update_products' pk=object.pk %}">Editar</a>
+                <a class="detail-bnt" href="{% url 'delete_products' pk=object.pk %}">Deletar</a>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
